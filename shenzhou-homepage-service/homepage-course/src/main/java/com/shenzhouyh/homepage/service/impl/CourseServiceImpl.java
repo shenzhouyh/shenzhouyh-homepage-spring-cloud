@@ -46,15 +46,15 @@ public class CourseServiceImpl implements ICourseService {
      * @return
      */
     @Override
-    public List<HomepageCourse> getListByIds(CourseInfosRequest request) {
+    public List<CourseInfo> getListByIds(CourseInfosRequest request) {
         if (CollectionUtils.isEmpty(request.getIds())) {
             return Collections.emptyList();
         }
         List<HomepageCourse> allCourse = courseDao.findAllById(request.getIds());
         return allCourse.stream().map(course -> {
-            HomepageCourse homepageCourse = new HomepageCourse();
-            BeanUtils.copyProperties(course, homepageCourse);
-            return homepageCourse;
+            CourseInfo courseInfo = new CourseInfo();
+            BeanUtils.copyProperties(course, courseInfo);
+            return courseInfo;
         }).collect(Collectors.toList());
     }
 }

@@ -2,7 +2,6 @@ package com.shenzhouyh.homepage.service;
 
 import com.shenzhouyh.homepage.CourseInfo;
 import com.shenzhouyh.homepage.CourseInfosRequest;
-import com.shenzhouyh.homepage.entity.HomepageCourse;
 
 import java.util.List;
 
@@ -25,5 +24,5 @@ public interface ICourseService {
      * @param request
      * @return
      */
-    List<HomepageCourse> getListByIds(CourseInfosRequest request);
+    List<CourseInfo> getListByIds(CourseInfosRequest request);
 }
